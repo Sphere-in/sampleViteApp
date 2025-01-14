@@ -24,11 +24,13 @@ jobs:
     - name: Build Project
       run: npm run build
 
-    - name: Deploy to Server
-      uses: appleboy/ssh-action@v0.1.8
+    - name: Deploy with SCP
+      uses: appleboy/scp-action@v0.2.10
       with:
         host: localhost
-        username: sphere
+        username: sphere          # SSH username (e.g., 'ubuntu' or 'root')
         key: ${{ secrets.DEPLOY_SSH_KEY }}
-        source: ./dist/*
-        target: /var/www/my-vite-app/
+        source: ./dist/*           # Source files from the dist directory
+        target: /var/www/my-vite-app/  # Target directory on the server
+        port: 22
+        sync: false
