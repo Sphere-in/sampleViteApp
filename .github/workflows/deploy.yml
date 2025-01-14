@@ -27,10 +27,9 @@ jobs:
     - name: Deploy with SCP
       uses: appleboy/scp-action@v0.1.4  # Correct version for the SCP action
       with:
-        host:  127.0.0.1
+        host: 127.0.0.1
         username: sphere               # Replace with your actual SSH username
         key: ${{ secrets.DEPLOY_SSH_KEY }}
         source: ./dist/*               
         target: /var/www/my-vite-app/
         port: 22
-        sync: false
