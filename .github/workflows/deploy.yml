@@ -30,6 +30,5 @@ jobs:
         host: localhost
         username: your-ssh-username
         key: ${{ secrets.DEPLOY_SSH_KEY }}
-        # source: ./dist/*
-        source: /home/sphere/myproject/sample-1/*
+        source: ./dist/*
         target: /var/www/my-vite-app/sample-1
