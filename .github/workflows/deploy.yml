@@ -31,4 +31,4 @@ jobs:
         username: sphere
         key: ${{ secrets.DEPLOY_SSH_KEY }}
         source: ./dist/*
-        target: /var/www/my-vite-app/sample-1
+        target: /var/www/my-vite-app/
