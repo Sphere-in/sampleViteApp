@@ -25,12 +25,12 @@ jobs:
       run: npm run build
 
     - name: Deploy with SCP
-      uses: appleboy/scp-action@v0.2.10
+      uses: appleboy/scp-action@v0.1.4  # Correct version for the SCP action
       with:
         host: localhost
-        username: sphere          # SSH username (e.g., 'ubuntu' or 'root')
+        username: sphere               # Replace with your actual SSH username
         key: ${{ secrets.DEPLOY_SSH_KEY }}
-        source: ./dist/*           # Source files from the dist directory
-        target: /var/www/my-vite-app/  # Target directory on the server
+        source: ./dist/*               
+        target: /var/www/my-vite-app/  
         port: 22
         sync: false
