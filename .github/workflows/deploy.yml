@@ -25,10 +25,11 @@ jobs:
       run: npm run build
 
     - name: Deploy to Server
-      uses: appleboy/scp-action@v0.2.10
+      uses: appleboy/ssh-action@v0.1.8
       with:
         host: localhost
         username: your-ssh-username
         key: ${{ secrets.DEPLOY_SSH_KEY }}
-        source: ./dist/*
+        # source: ./dist/*
+        source: /home/sphere/myproject/sample-1/*
         target: /var/www/my-vite-app/sample-1
