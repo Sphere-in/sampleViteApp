@@ -31,6 +31,6 @@ jobs:
         username: sphere               # Replace with your actual SSH username
         key: ${{ secrets.DEPLOY_SSH_KEY }}
         source: ./dist/*               
-        target: /var/www/my-vite-app/  
+        target: /var/www/my-vite-app/sample-1
         port: 22
         sync: false
